@@ -13,8 +13,8 @@ public:
 	void setName(std::string name);
 	void announce(void) const;
 	~Zombie();
+	static Zombie *zombieHorde(int N, std::string name);
 };
 
-Zombie *zombieHorde(int N, std::string name);
 
 #endif

@@ -4,7 +4,7 @@
 
 int main(void)
 {
-	int arr_length = 6;
+	const int arr_length = 6;
 	Animal* animals[arr_length];
 
 	for (int i = 0; i < arr_length; i++)

@@ -2,9 +2,9 @@
 
 int main(void)
 {
-	Zombie *zombie1 = newZombie("Heap Zombie");
+	Zombie *zombie1 = Zombie::newZombie("Heap Zombie");
 	zombie1->announce();
-	randomChump("Stack Zombie");
+	Zombie::randomChump("Stack Zombie");
 	delete zombie1;
 	return 0;
 }

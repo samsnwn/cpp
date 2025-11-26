@@ -1,27 +1,18 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap()
+ClapTrap::ClapTrap() : _name("default"), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
 	std::cout << "ClapTrap called the default constructor" << std::endl;
-	this->_name = "default";
-	_hitPoints = 10;
-	_energyPoints = 10;
-	_attackDamage = 0;
 }
 
-ClapTrap::ClapTrap(std::string name)
+ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
 	std::cout << "ClapTrap called the parametrized constructor" << std::endl;
-	this->_name = name;
-	_hitPoints = 10;
-	_energyPoints = 10;
-	_attackDamage = 0;
 }
 
-ClapTrap::ClapTrap(const ClapTrap & original)
+ClapTrap::ClapTrap(const ClapTrap & original) : _name(original._name), _hitPoints(original._hitPoints), _energyPoints(original._energyPoints), _attackDamage(original._attackDamage)
 {
 	std::cout << "ClapTrap called the copy constructor" << std::endl;
-	*this = original;
 }
 
 ClapTrap & ClapTrap::operator=(const ClapTrap & original)

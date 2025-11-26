@@ -12,31 +12,26 @@ std::string replaceString(const std::string &line, const std::string &s1, const 
 	
 	while ((found = line.find(s1, pos)) != std::string::npos)
 	{
-		// Add the part before the found string
 		result += line.substr(pos, found - pos);
-		// Add the replacement string
 		result += s2;
-		// Move position past the found string
 		pos = found + s1.length();
 	}
-	// Add the remaining part of the string
 	result += line.substr(pos);
-	
 	return result;
 }
 
-int sed(const std::string &filename, const std::string &s1, const std::string &s2)
+bool sed(const std::string &filename, const std::string &s1, const std::string &s2)
 {
 	if (filename.empty())
 	{
 		std::cerr << "Error: filename cannot be empty" << std::endl;
-		return 0;
+		return false;
 	}
 	std::ifstream in(filename.c_str());
 	if (!in)
 	{
 		std::cerr << "Error: cannot open file '" << filename << "'" << std::endl;
-		return 0;
+		return false;
 	}
 	std::string outputFilename = filename + ".replace";
 	std::ofstream out(outputFilename.c_str());
@@ -44,7 +39,7 @@ int sed(const std::string &filename, const std::string &s1, const std::string &s
 	{
 		std::cerr << "Error: cannot create output file '" << outputFilename << "'" << std::endl;
 		in.close();
-		return 0;
+		return false;
 	}
 	std::string line;
 	while (std::getline(in, line))
@@ -59,11 +54,11 @@ int sed(const std::string &filename, const std::string &s1, const std::string &s
 		std::cerr << "Error: failed to read from file '" << filename << "'" << std::endl;
 		in.close();
 		out.close();
-		return 0;
+		return false;
 	}
 	in.close();
 	out.close();
-	return 1;
+	return true;
 }
 
 int main(int argc, char **argv)
