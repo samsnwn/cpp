@@ -37,24 +37,23 @@ int main(void) {
   assignedDog.makeSound();
   std::cout << std::endl;
 
-  std::cout << "--- Slicing Test (Derived to Base) ---" << std::endl;
+  std::cout << "--- Pointer test ---" << std::endl;
   const Animal *animalPtr = new Dog();
-  // This should print "Dog" and "Woof!" because of virtual functions
   std::cout << "Type via pointer: " << animalPtr->getType() << std::endl;
   animalPtr->makeSound();
   delete animalPtr;
   std::cout << std::endl;
 
   std::cout << "--- WrongAnimal Tests ---" << std::endl;
-  const WrongAnimal *wrongMeta = new WrongAnimal();
+  const WrongAnimal *wrongAnimal = new WrongAnimal();
   const WrongAnimal *wrongCat = new WrongCat();
 
-  std::cout << wrongMeta->getType() << " " << std::endl;
-  wrongMeta->makeSound();
-  std::cout << wrongCat->getType() << " " << std::endl;
-  wrongCat->makeSound(); // Should print WrongAnimal sound!
+  std::cout << wrongAnimal->getType() << " " << std::endl;
+  wrongAnimal->makeSound();
+  std::cout << wrongAnimal->getType() << " " << std::endl;
+  wrongCat->makeSound();
 
-  delete wrongMeta;
+  delete wrongAnimal;
   delete wrongCat;
   std::cout << std::endl;
 
