@@ -43,7 +43,3 @@ This exercise involves implementing a class called `Span` that can store a maxim
 *   Calculate the longest span (the largest difference between two numbers in the span).
 
 This exercise will test your ability to design a custom container-like class, manage its state, and implement algorithms to operate on its elements, potentially using STL algorithms and handling exceptions for error conditions (e.g., trying to add more numbers than the span can hold, or calculating spans on an empty or single-element span).
-
-### Exercise 02: (Empty)
-
-This exercise directory is currently empty. It might have been intended for a more advanced topic related to STL, such as custom allocators, container adaptors, or more complex algorithms. You may need to refer to the `cpp08.pdf` for the actual content of this exercise.

@@ -1,21 +1,21 @@
 #ifndef SHRUBBERYCREATIONFORM_H
-# define SHRUBBERYCREATIONFORM_H
+#define SHRUBBERYCREATIONFORM_H
 
-#include <iostream>
 #include "AForm.hpp"
 #include <fstream>
+#include <iostream>
 
-class ShrubberyCreationForm : public AForm
-{
-	private:
-		std::string target;
-	public:
-		ShrubberyCreationForm(std::string target);
-		ShrubberyCreationForm(const ShrubberyCreationForm & og);
-		ShrubberyCreationForm & operator=(const ShrubberyCreationForm & og);
-		~ShrubberyCreationForm();
+class ShrubberyCreationForm : public AForm {
+private:
+  std::string target;
 
-		void execute(Bureaucrat const & executor) const;
+public:
+  ShrubberyCreationForm(std::string target);
+  ShrubberyCreationForm(const ShrubberyCreationForm &og);
+  ShrubberyCreationForm &operator=(const ShrubberyCreationForm &og);
+  ~ShrubberyCreationForm();
+
+  void execute(Bureaucrat const &executor) const;
 };
 
 #endif
